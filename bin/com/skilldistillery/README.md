@@ -12,12 +12,12 @@
 
 #### Technologies Used
 
-Eclipse
-Java
-Terminal Commands
-GitHub/Git
-Zoom
-GOOGLE / Stackoverflow
+- Eclipse
+- Java
+- Terminal Commands
+- GitHub/Git
+- Zoom
+- GOOGLE / Stackoverflow
 
 
 
