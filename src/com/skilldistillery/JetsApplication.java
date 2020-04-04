@@ -61,5 +61,5 @@ public class JetsApplication {
 				+ "\n~ ~ ~ ~ ~ ~ ~ |\uD83D\uDE81 \t  \uD83D\uDEE9 | ~ ~ ~ ~ ~ ~ ~  \n" );
 
 
-
+	}
 }
