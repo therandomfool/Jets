@@ -5,7 +5,7 @@ import java.util.*;
 public class JetsApplication {
 
 	Scanner input = new Scanner(System.in);
-	JetsApplication app = new JetsApplication();
+	JetsApplication aifField = new JetsApplication();
 	
 
 	public static void main(String[] args) {
@@ -13,7 +13,11 @@ public class JetsApplication {
 	}
 
 
-	public void fly() {
+	private void launch() {
+		
+	} 
+	
+	private void UserMenu() {
 		
 	}
 }

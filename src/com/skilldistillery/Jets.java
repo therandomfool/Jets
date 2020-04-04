@@ -16,6 +16,17 @@ public abstract class Jets {
 		this.range = range;
 		this.price = price;
 	}
+	
+	public Double getSpeedInMach() {
+//		return set to speed to stop eclipse yelling
+		return speed;
+		
+	}
+	
+	public void fly() {
+		
+	}
+	
 	public String getModel() {
 		return model;
 	}
@@ -86,5 +97,5 @@ public abstract class Jets {
 		return true;
 	}
 	
-	s
+	
 }
