@@ -1,6 +1,6 @@
 package com.skilldistillery;
 
-public class FighterJet extends Jets{
+public class FighterJet extends Jets implements CombatReady {
 
 
 	
@@ -9,9 +9,9 @@ public class FighterJet extends Jets{
 	}
 
 	
-
+@Override
 	public void fight() {
-		
+		System.out.println("Fight");
 	}
 
 }

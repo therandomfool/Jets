@@ -1,8 +1,6 @@
 package com.skilldistillery;
 
-public class CombatReady {
+public interface CombatReady {
 
-	public void fight() {
-
-	}
+	public void fight();
 }

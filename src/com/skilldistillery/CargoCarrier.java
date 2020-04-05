@@ -1,8 +1,6 @@
 package com.skilldistillery;
 
-public class CargoCarrier {
+public interface CargoCarrier {
 
-	public void loadCargo() {
-
-	}
+	public void loadCargo(); 
 }

@@ -1,6 +1,6 @@
 package com.skilldistillery;
 
-public class CargoPlane extends Jets {
+public class CargoPlane extends Jets implements CargoCarrier {
 
 
 
@@ -10,7 +10,7 @@ public class CargoPlane extends Jets {
 	}
 
 	public void loadCargo() {
-		
+		System.out.println("LOADING CARGO");
 	}
 
 }
