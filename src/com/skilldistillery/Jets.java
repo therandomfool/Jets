@@ -8,15 +8,15 @@ public abstract class Jets {
 	private Long price;
 	private Double gsim;
 
-	public Jets(String model, Double speed, Integer range, Long price, Double gsim) {
-		this.model = model;
-		this.speed = speed;
-		this.range = range;
-		this.price = price;
-		this.gsim = gsim;
-	}
+//	public Jets(String model, Double speed, Integer range, Long price, Double gsim) {
+//		this.model = model;
+//		this.speed = speed;
+//		this.range = range;
+//		this.price = price;
+//		this.gsim = gsim;
+//	}
 
-	public Jets(String capability, String model, Double speed, Integer range, Long price, Double gsim) {
+	public Jets(String capability, String model, Double speed, Long price, Integer range, Double gsim) {
 		this.capability = capability;
 		this.model = model;
 		this.speed = speed;
@@ -76,8 +76,8 @@ public abstract class Jets {
 
 	@Override
 	public String toString() {
-		return "Jets [model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price + ", gsim=" + gsim
-				+ "]";
+		return "Jets [capability=" + capability + ", model=" + model + ", speed=" + speed + ", range=" + range
+				+ ", price=" + price + ", gsim=" + gsim + "]";
 	}
 
 	@Override
