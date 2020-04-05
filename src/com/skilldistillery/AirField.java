@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class AirField {
-
+	Scanner input = new Scanner(System.in);
 //	set up
 	private List<Jets> jetList = new ArrayList<>();
 
@@ -178,6 +178,24 @@ public class AirField {
 		if (printOut.contentEquals("")) {
 			System.out.println(
 					"There are no cargo planes in the inventory!\n" + "Consider adding one with with option 9.");
+		}
+	}
+
+	// REMOVE FROM FLEET
+	public void removeJet() {
+		if (jetList.size() != 0) {
+			System.out.println("Select a jet to delete: ");
+			for (int i = 0; i < jetList.size(); i++) {
+				System.out.println((i + 1) + ". " + jetList.get(i).getModel());
+			}
+			try {
+				int deleteInput = input.nextInt();
+				System.out.println(jetList.get(deleteInput - 1).getModel() + " has been removed.");
+				jetList.remove(deleteInput - 1);
+			} catch (Exception e) {
+				System.out.println("Invlaid entry.  Try again.");
+			}
+			input.nextLine();
 		}
 	}
 }

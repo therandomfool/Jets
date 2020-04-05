@@ -9,8 +9,7 @@ public class JetsApplication {
 	public static void main(String[] args) {
 		JetsApplication jaApp = new JetsApplication();
 		jaApp.launch();
-//		showMenu();
-//		airField.pJets();
+
 	}
 
 	private void launch() {
@@ -54,6 +53,7 @@ public class JetsApplication {
 				airField.addJet(input);
 				break;
 			case "8":
+				airField.removeJet();
 				break;
 			case "9":
 				System.out.println("Leaving-------------");
