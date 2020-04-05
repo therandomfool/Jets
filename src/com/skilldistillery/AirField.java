@@ -1,41 +1,57 @@
 package com.skilldistillery;
 
+
+import java.io.*;
 import java.util.*;
 
 public class AirField {
-	
+
 //	set up
 	private List<Jets> jetList = new ArrayList<>();
 	private Scanner input = new Scanner(System.in);
-	
-	
+
 //	create contructor
-	public AirField() {
-		super();
-		// TODO Auto-generated constructor stub
+	public AirField(List<Jets> jetList) {
+		this.jetList = createJetList();
 	}
-
-//	setters n getters
-
-	public List<Jets> getJetList() {
-		return jetList;
-	}
-
 
 	public void setJetList(List<Jets> jetList) {
 		this.jetList = jetList;
 	}
 
+	private List<Jets> createJetList() {
+		try {
 
-	public Scanner getInput() {
-		return input;
+			BufferedReader br = new BufferedReader(new FileReader("Jets.txt"));
+			String name;
+			String[] newJet = null;
+
+			// read txt
+			while ((name = br.readLine()) != null) {
+				newJet = name.split(", ");
+				String capability = newJet[0];
+				String model = newJet[1];
+				double speed = Double.parseDouble(newJet[2]);
+				int range = Integer.parseInt(newJet[3]);
+				int price = Integer.parseInt(newJet[4]);
+
+				if (newJet[0].equalsIgnoreCase("Fighter")) {
+					jetList.add(new FighterJet(capability, model, speed, range, price));
+				} else if (newJet[0].equalsIgnoreCase("CargoTransport")) {
+					jetList.add(new CargoPlane(capability, model, speed, range, price));
+				} else if (newJet[0].equalsIgnoreCase("Reconnaissance")) {
+					jetList.add(new Reconnaissance(capability, model, speed, range, price));
+				} else {
+					jetList.add(new JetImpl(capability, model, speed, range, price));
+				}
+			}
+			br.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return jetList;
 	}
 
-
-	public void setInput(Scanner input) {
-		this.input = input;
-	}
-	
-
-	
 }
