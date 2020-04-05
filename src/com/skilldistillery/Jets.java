@@ -7,13 +7,8 @@ public abstract class Jets {
 	private Integer range;
 	private Long price;
 
-//	public Jets(String model, Double speed, Integer range, Long price, Double gsim) {
-//		this.model = model;
-//		this.speed = speed;
-//		this.range = range;
-//		this.price = price;
-//		this.gsim = gsim;
-//	}
+	public Jets() {
+	}
 
 	public Jets(String capability, String model, Double speed, Long price, Integer range) {
 		this.capability = capability;
@@ -30,11 +25,6 @@ public abstract class Jets {
 
 	public void setCapability(String capability) {
 		this.capability = capability;
-	}
-
-	public Double getSpeedInMach() {
-		return gsim = this.getSpeed() / 767.269;
-
 	}
 
 	public String getModel() {
@@ -79,7 +69,7 @@ public abstract class Jets {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((gsim == null) ? 0 : gsim.hashCode());
+		result = prime * result + ((capability == null) ? 0 : capability.hashCode());
 		result = prime * result + ((model == null) ? 0 : model.hashCode());
 		result = prime * result + ((price == null) ? 0 : price.hashCode());
 		result = prime * result + ((range == null) ? 0 : range.hashCode());
@@ -96,10 +86,10 @@ public abstract class Jets {
 		if (getClass() != obj.getClass())
 			return false;
 		Jets other = (Jets) obj;
-		if (gsim == null) {
-			if (other.gsim != null)
+		if (capability == null) {
+			if (other.capability != null)
 				return false;
-		} else if (!gsim.equals(other.gsim))
+		} else if (!capability.equals(other.capability))
 			return false;
 		if (model == null) {
 			if (other.model != null)
@@ -128,7 +118,4 @@ public abstract class Jets {
 
 	}
 
-	public Double getGsim() {
-		return gsim;
-	}
 }

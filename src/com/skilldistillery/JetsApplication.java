@@ -10,16 +10,16 @@ public class JetsApplication {
 	public static void main(String[] args) {
 		JetsApplication jaApp = new JetsApplication();
 		AirField airField = new AirField();
-//		launch();
-		
-		airField.pJets();
+		launch();
+//		showMenu();
+//		airField.pJets();
 	}
 
 	private static void launch() {
 		UserMenu();
 	}
 
-	private static void UserMenu() {
+	public static void UserMenu() {
 		boolean menu = true;
 		while (menu) {
 			showMenu();
@@ -27,77 +27,83 @@ public class JetsApplication {
 
 			switch (nextSwitch) {
 			case "1":
-				airField.listFleet();
+				listFleet();
+				break;
 			case "2":
 				flyAll();
+				break;
 			case "3":
-
+				break;
 			case "4":
 				longestRange();
+				break;
 			case "5":
 				addCargo();
+				break;
 			case "6":
 				dogFight();
+				break;
 			case "7":
-
+				break;
 			case "8":
-
+				break;
 			case "9":
-
+				break;
 			default:
 			}
 		}
 	}
 
 	private static void showMenu() {
-		StringBuilder choice = new StringBuilder("\n~ ~ ~ ~ ~ ~ ~ |\uD83D\uDE81 \t  \uD83D\uDEE9 | ~ ~ ~ ~ ~ ~ ~  \n\n"
-				+ "1)  List fleet\n\t~ ~ ~ ~ ~ ~ ~ |\\uD83D\\uDE81|"
-				+ "2)  Fly all jets\n\t~ ~ ~ ~ ~ ~ ~ |\\uD83D\\uDEE9 |"
-				+ "3)  View fastest jet\n\t~ ~ ~ ~ ~ ~ ~ |\\uD83D\\uDE81|"
-				+ "4)  View aircraft with longest range\n\t~ ~ ~ ~ ~ ~ ~ |\\\\uD83D\\\\uDEE9 |"
-				+ "5)  Load all cargo jets\n\t~ ~ ~ ~ ~ ~ ~ |\\uD83D\\uDE81|"
-				+ "6)  Dogfight!\n\t~ ~ ~ ~ ~ ~ ~ |\\\\uD83D\\\\uDEE9 |"
-				+ "7)  Add aircraft to fleet\n\t~ ~ ~ ~ ~ ~ ~ |\\uD83D\\uDE81s|"
-				+ "8) Remove aircraft from fleet\\t~ ~ ~ ~ ~ ~ ~ |\\\\uD83D\\\\uDEE9 |n" + "9) Quit"
-				+ "\n~ ~ ~ ~ ~ ~ ~ |\uD83D\uDE81 \t  \uD83D\uDEE9 | ~ ~ ~ ~ ~ ~ ~  \n");
+		System.out.println("\n~ ~ ~ ~ ~ ~ ~ |\uD83D\uDE81 \t  \uD83D\uDEE9 | ~ ~ ~ ~ ~ ~ ~  \n\n");
+		System.out.println( "1)  List fleet \uD83D\uDEE9");		
+		System.out.println("2)  Fly all jets");	
+		System.out.println("3)  View fastest jet");	 
+		System.out.println("4)  View aircraft with longest range");	 
+		System.out.println( "5)  Load all cargo jets");	 
+		System.out.println( "6)  Dogfight!");	
+		System.out.println( "7)  Add aircraft to fleet ");	
+		System.out.println( "8) Remove aircraft from fleet");	
+		System.out.println("9) Done / Quit");	
+		System.out.println("\n~ ~ ~ ~ ~ ~ ~ |\uD83D\uDE81 \t  \uD83D\uDEE9 | ~ ~ ~ ~ ~ ~ ~  \n");	 
 
 	}
 	
 	//  LIST FLEET
-		public void listFleet() {
-			for (int i = 0; i < airField.jetList.size(); i++) {
-				System.out.println(airField.jetList.get(i).toString());
+		public static void listFleet() {
+			for (int i = 0; i < jetList.size(); i++) {
+				System.out.println(jetList.get(i).toString());
 			}
 		}
 
 		//  FLY ALL 
-		public void flyAll() {
-			for (int i = 0; i < airField.jetList.size(); i++) {
-				airField.jetList.get(i).fly();
+		public static void flyAll() {
+			for (int i = 0; i < jetList.size(); i++) {
+				jetList.get(i).fly();
 			}
 		}
 
 		// VIEW LONGEST RANGE
-		public void longestRange() {
+		public static void longestRange() {
 			int longestRange = 0;
 			String rangeJet = "";
-			for (int i = 0; i < airField.jetList.size(); i++) {
-				if (longestRange < airField.jetList.get(i).getRange()) {
-					longestRange = airField.jetList.get(i).getRange();
-					rangeJet = airField.jetList.get(i).toString();
+			for (int i = 0; i < jetList.size(); i++) {
+				if (longestRange < jetList.get(i).getRange()) {
+					longestRange = jetList.get(i).getRange();
+					rangeJet = jetList.get(i).toString();
 				}
 			}
 			System.out.println("Aircraft with longest range in inventory is:\n" + rangeJet);
 		}
 
 		// LOAD ALL CARGO 
-		public void addCargo() {
+		public static void addCargo() {
 			String printOut = "";
-			for (int i = 0; i < airField.jetList.size(); i++) {
-				if (airField.jetList.get(i) instanceof CargoPlane) {
-					printOut = (airField.jetList.get(i).getModel() + " ");
+			for (int i = 0; i < jetList.size(); i++) {
+				if (jetList.get(i) instanceof CargoPlane) {
+					printOut = (jetList.get(i).getModel() + " ");
 					System.out.print(printOut);
-					((CargoPlane) airField.jetList.get(i)).loadCargo();
+					((CargoPlane) jetList.get(i)).loadCargo();
 				}
 			}
 			if (printOut.contentEquals("")) {
@@ -107,13 +113,13 @@ public class JetsApplication {
 		}
 
 		// DOGFIGHT!
-		public void dogFight() {
+		public static void dogFight() {
 			String printOut = "";
-			for (int i = 0; i < airField.jetList.size(); i++) {
-				if (airField.jetList.get(i) instanceof FighterJet) {
-					printOut = (airField.jetList.get(i).getModel() + " ");
+			for (int i = 0; i < jetList.size(); i++) {
+				if (jetList.get(i) instanceof FighterJet) {
+					printOut = (jetList.get(i).getModel() + " ");
 					System.out.print(printOut);
-					((FighterJet) airField.jetList.get(i)).fight();
+					((FighterJet) jetList.get(i)).fight();
 				}
 			}
 			if (printOut.contentEquals("")) {
@@ -141,27 +147,38 @@ public class JetsApplication {
 			case "Fighter":
 			case "fighter":
 			case "1":
-				airField.jetList.add(new FighterJet(capability, model, speed, range, price));
+				jetList.add(new FighterJet(jetChoice, model, speed, range, price));
 				break;
 			case "Cargo":
 			case "cargo":
 			case "2":
-				airField.jetList.add(new CargoPlane(model, speed, range, price));
+				jetList.add(new CargoPlane(jetChoice, model, speed, range, price));
 				break;
-			case "Trainer":
-			case "trainer":
+			case "Reconnaissance":
+			case "reconnaissance":
 			case "3":
-				airField.jetList.add(new Reconnaissance(model, speed, range, price));
+				jetList.add(new Reconnaissance(jetChoice, model, speed, range, price));
 				break;
 			case "Other":
 			case "other":
 			case "4":
-				airField.jetList.add(new JetImpl(model, speed, range, price));
+				jetList.add(new JetImpl(jetChoice, model, speed, range, price));
 				break;
 			default:
 				System.out.println("Invalid choice.");
 			}
 		}
+		// VIEW FASTEST
+		public void fastestJet() {
+			double fastest = 0;
+			String fastestJet = "";
+			for (int i = 0; i < jetList.size(); i++) {
+				if (fastest < jetList.get(i).getSpeed()) {
+					fastest = jetList.get(i).getSpeed();
+					fastestJet = jetList.get(i).toString();
+				}
+			}
+			System.out.println("Fastest aircraft in inventory:\n" + fastestJet);
 
-
+		}
 }
