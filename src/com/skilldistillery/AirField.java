@@ -9,7 +9,7 @@ public class AirField {
 	private List<Jets> jetList = new ArrayList<>();
 
 	public AirField() {
-//		this.jetList = createJetList();
+		this.jetList = createJetList();
 	}
 
 	public void setJetList(List<Jets> jetList) {
@@ -20,10 +20,10 @@ public class AirField {
 		return jetList;
 	}
 
-	public void  createJetList() {
+	public List<Jets>  createJetList() {
 		try {
 
-			BufferedReader br = new BufferedReader(new FileReader("Jet.txt"));
+			BufferedReader br = new BufferedReader(new FileReader("Jets.txt"));
 			String[] newJet = null;
 			String name;
 			// read txt
@@ -53,7 +53,8 @@ public class AirField {
 			br.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-		} 
+		}
+		return jetList; 
 		
 	}
 	public void pJets() {
