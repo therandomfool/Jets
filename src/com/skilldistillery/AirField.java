@@ -57,10 +57,11 @@ public class AirField {
 		return jetList; 
 		
 	}
-	public void pJets() {
-		for (Jets jets : jetList) {
-			System.out.println(jets.toString());
-		}
-	}
+//	for test purposes
+//	public void pJets() {
+//		for (Jets jets : jetList) {
+//			System.out.println(jets.toString());
+//		}
+//	}
 	}
 

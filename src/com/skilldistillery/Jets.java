@@ -115,7 +115,7 @@ public abstract class Jets {
 	}
 
 	public void fly() {
-
+		System.out.println("Model: " + model + "\nMax Speed " + speed + " MPH\nMax Range: " + range +" \nPrice: " + price );
 	}
 
 }
