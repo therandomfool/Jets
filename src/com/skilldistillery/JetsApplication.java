@@ -70,7 +70,7 @@ public class JetsApplication {
 //			}
 //		}
 //
-//		//  FLY ALL AIRCRAFT
+//		//  FLY ALL 
 //		public void flyAll() {
 //			for (int i = 0; i < airField.jetList.size(); i++) {
 //				airField.jetList.get(i).fly();
@@ -79,7 +79,7 @@ public class JetsApplication {
 //
 //		
 //
-//		// VIEW FASTEST AIRCRAFT
+//		// VIEW FASTEST 
 //		public void fastestJet() {
 //			double fastest = 0;
 //			String fastestJet = "";
@@ -92,7 +92,7 @@ public class JetsApplication {
 //			System.out.println("Fastest aircraft in inventory:\n" + fastestJet);
 //		}
 //
-//		// VIEW AIRCRAFT WITH LONGEST RANGE
+//		// VIEW LONGEST RANGE
 //		public void longestRange() {
 //			int longestRange = 0;
 //			String rangeJet = "";
@@ -105,7 +105,7 @@ public class JetsApplication {
 //			System.out.println("Aircraft with longest range in inventory is:\n" + rangeJet);
 //		}
 //
-//		// LOAD ALL CARGO AIRCRAFT
+//		// LOAD ALL CARGO 
 //		public void addCargo() {
 //			String printOut = "";
 //			for (int i = 0; i < airField.jetList.size(); i++) {
@@ -137,7 +137,7 @@ public class JetsApplication {
 //			}
 //		}
 //		
-//		//ADD AIRCRAFT TO FLEET
+//		//ADD TO FLEET
 //		public void addJet() {
 //			System.out.println(
 //					"What type of plane would you like to add?\n1. Fighter\n2. " + "Cargo\n3." + " Reconnaissance\n4. Other");

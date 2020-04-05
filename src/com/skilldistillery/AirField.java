@@ -23,7 +23,7 @@ public class AirField {
 	public void  createJetList() {
 		try {
 
-			BufferedReader br = new BufferedReader(new FileReader("Jets.txt"));
+			BufferedReader br = new BufferedReader(new FileReader("Jet.txt"));
 			String[] newJet = null;
 			String name;
 			// read txt
@@ -40,11 +40,14 @@ public class AirField {
 					jet = new FighterJet(capability, model, speed, range, price);
 					jetList.add(jet);
 				} else if (newJet[0].equalsIgnoreCase("CargoTransport")) {
-					jetList.add(new CargoPlane(capability, model, speed, range, price));
+					jet = new CargoPlane(capability, model, speed, range, price);
+					jetList.add(jet);
 				} else if (newJet[0].equalsIgnoreCase("Reconnaissance")) {
-					jetList.add(new Reconnaissance(capability, model, speed, range, price));
+					jet = new Reconnaissance(capability, model, speed, range, price);
+					jetList.add(jet);
 				} else {
-					jetList.add(new JetImpl(capability, model, speed, range, price));
+					jet = new JetImpl(capability, model, speed, range, price);
+					jetList.add(jet);
 				}
 			}
 			br.close();
