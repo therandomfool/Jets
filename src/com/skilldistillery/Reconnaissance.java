@@ -11,6 +11,6 @@ public class Reconnaissance extends Jets {
 
 
 	public void recon() {
-		System.out.println("Your Recon Planes have been sent out!");
+		System.out.println("Your Recon Planes have been sent out to observe enemy movements!");
 	}
 }

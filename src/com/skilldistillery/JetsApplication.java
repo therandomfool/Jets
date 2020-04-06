@@ -18,15 +18,16 @@ public class JetsApplication {
 		while (menu) {
 
 			System.out.println("\n~ ~ ~ ~ ~ ~ ~ |\uD83D\uDE81 \t  \uD83D\uDEE9 | ~ ~ ~ ~ ~ ~ ~  \n\n");
-			System.out.println("1)  List fleet \uD83D\uDEE9");
+			System.out.println("1)  List fleet ");
 			System.out.println("2)  Fly all jets");
 			System.out.println("3)  View fastest jet");
 			System.out.println("4)  View aircraft with longest range");
 			System.out.println("5)  Load all cargo jets");
 			System.out.println("6)  Dogfight!");
-			System.out.println("7)  Add aircraft to fleet ");
-			System.out.println("8) Remove aircraft from fleet");
-			System.out.println("9) Done / Quit");
+			System.out.println("7)  Recon Mission ");
+			System.out.println("8)  Add aircraft to fleet ");
+			System.out.println("9)  Remove aircraft from fleet");
+			System.out.println("0)  Done / Quit");
 			System.out.println("\n~ ~ ~ ~ ~ ~ ~ |\uD83D\uDE81 \t  \uD83D\uDEE9 | ~ ~ ~ ~ ~ ~ ~  \n");
 
 			String nextSwitch = input.nextLine();
@@ -50,12 +51,15 @@ public class JetsApplication {
 				airField.dogFight();
 				break;
 			case "7":
-				airField.addJet(input);
+				airField.reconMission();
 				break;
 			case "8":
-				airField.removeJet();
+				airField.addJet(input);
 				break;
 			case "9":
+				airField.removeJet();
+				break;
+			case "0":
 				System.out.println("Leaving-------------");
 				menu = false;
 			default:
@@ -64,7 +68,6 @@ public class JetsApplication {
 	}
 
 	
-
 	
 
 	

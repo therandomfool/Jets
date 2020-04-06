@@ -19,7 +19,7 @@ public class AirField {
 	public List<Jets> getJetList() {
 		return jetList;
 	}
-
+//buffer Jets creation
 	public List<Jets> createJetList() {
 		try {
 
@@ -71,7 +71,7 @@ public class AirField {
 		}
 		if (printOut.contentEquals("")) {
 			System.out.println(
-					"There are no fighter jets in the inventory!\n" + "Consider adding one with with option ....");
+					"There are no fighter jets in the inventory!\n" + "Consider adding one with with option 8.");
 		}
 	}
 
@@ -177,7 +177,7 @@ public class AirField {
 		}
 		if (printOut.contentEquals("")) {
 			System.out.println(
-					"There are no cargo planes in the inventory!\n" + "Consider adding one with with option 9.");
+					"There are no cargo planes in the inventory!\n" + "Consider adding one with with option 8.");
 		}
 	}
 
@@ -196,6 +196,22 @@ public class AirField {
 				System.out.println("Invlaid entry.  Try again.");
 			}
 			input.nextLine();
+		}
+	}
+	
+	//	RECON MISSIONS
+	public void reconMission() {
+		String printOut = "";
+		for (int i = 0; i < jetList.size(); i++) {
+			if (jetList.get(i) instanceof Reconnaissance) {
+				printOut = (jetList.get(i).getModel() + " ");
+				System.out.print(printOut);
+				((Reconnaissance) jetList.get(i)).recon();
+			}
+		}
+		if (printOut.contentEquals("")) {
+			System.out.println(
+					"There are no Reconnaissance jets in the inventory!\n" + "Consider adding one with with option 8.");
 		}
 	}
 }
