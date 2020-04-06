@@ -76,8 +76,10 @@ Quit exits the program.
 #### Lessons Learned 
 - ArrayList
 - Interface
-- EXCEPTIONS
-- Encapsulation
+- Try and Catch
+- Buffered Reading .txt file to input our first outside data except from user input. 
+- Exceptions vs error
+- ENCAPSULATION
 - Object Initialization
 - INHERITANCE
 - Visibility
