@@ -19,7 +19,8 @@ public class AirField {
 	public List<Jets> getJetList() {
 		return jetList;
 	}
-//buffer Jets creation
+
+//buffer jetsList creation
 	public List<Jets> createJetList() {
 		try {
 
@@ -143,9 +144,6 @@ public class AirField {
 
 	// FLY ALL
 	public void flyAll() {
-//				for (int i = 0; i < jetList.size(); i++) {
-//					jetList.Jets.Fly(i);
-//				}
 		for (Jets jet : jetList) {
 			jet.fly();
 			System.out.println();
@@ -189,17 +187,17 @@ public class AirField {
 				System.out.println((i + 1) + ". " + jetList.get(i).getModel());
 			}
 			try {
-				int deleteInput = input.nextInt();
-				System.out.println(jetList.get(deleteInput - 1).getModel() + " has been removed.");
-				jetList.remove(deleteInput - 1);
+				int dInput = input.nextInt();
+				System.out.println(jetList.get(dInput - 1).getModel() + " has been removed.");
+				jetList.remove(dInput - 1);
 			} catch (Exception e) {
 				System.out.println("Invlaid entry.  Try again.");
 			}
 			input.nextLine();
 		}
 	}
-	
-	//	RECON MISSIONS
+
+	// RECON MISSIONS
 	public void reconMission() {
 		String printOut = "";
 		for (int i = 0; i < jetList.size(); i++) {

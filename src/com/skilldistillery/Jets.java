@@ -115,7 +115,8 @@ public abstract class Jets {
 	}
 
 	public void fly() {
-		System.out.println("Model: " + model + "\nMax Speed " + speed + " MPH\nMax Range: " + range +" \nPrice: " + price );
+		double flyTime = (double) (range/speed);
+		System.out.printf("\nAir Type: " + capability + " \nModel: " + model + "\nMax Speed " + speed + " MPH\nMax Range: " + range +" \nPrice: " + price + "\n ****> Flight Time in Hours:  %.2f", flyTime);
 	}
 
 }

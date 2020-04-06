@@ -11,7 +11,7 @@ public class JetsApplication {
 		jaApp.launch();
 
 	}
-
+	// KICKOFF START MENU
 	private void launch() {
 
 		boolean menu = true;
