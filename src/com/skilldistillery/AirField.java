@@ -55,7 +55,7 @@ public class AirField {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(jetList.size());
+//		System.out.println(jetList.size());
 		return jetList;
 
 	}
